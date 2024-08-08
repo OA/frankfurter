@@ -49,7 +49,7 @@ jobs:
         with:
           platforms: linux/arm64
           outputs: type=image,name=${{ env.LOWERCASE_REPOSITORY_NAME }},push-by-digest=true,name-canonical=true,push=true
-          file: service/Dockerfile
+          file: Dockerfile
           context: .
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=registry,ref=${{ env.LOWERCASE_REPOSITORY_NAME }}:buildcache-arm64
@@ -106,7 +106,7 @@ jobs:
         with:
           platforms: linux/amd64
           outputs: type=image,name=${{ env.LOWERCASE_REPOSITORY_NAME }},push-by-digest=true,name-canonical=true,push=true
-          file: service/Dockerfile
+          file: Dockerfile
           context: .
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=registry,ref=${{ env.LOWERCASE_REPOSITORY_NAME }}:buildcache-amd64
